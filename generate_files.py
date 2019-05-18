@@ -14,7 +14,6 @@ sections = soup.find_all("h3")
 for section in sections:
     if section.a is not None:
         question = section.contents[1]
-        instruction = section.next_sibling.next_sibling.p.text
         number = question.split(".")[0]
         filepath = os.path.join(base_dir, number + '.py')
 
@@ -26,4 +25,6 @@ for section in sections:
                 f.write("#!/usr/bin/env python\n")
                 f.write("\n")
                 f.write("print(\"" + question.replace('"', '\\"') + "\")\n")
-                f.write("print(\"" + instruction.replace('"', '\\"') + "\")\n")
+                for tag in section.next_sibling.next_sibling.children:
+                    if tag.name:
+                        f.write("print(\"" + tag.text.strip().replace('"', '\\"').replace("\n", ', ') + "\")\n")
