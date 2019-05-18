@@ -27,3 +27,10 @@ for f in *.py; do
   python "$f"
 done
 ```
+
+## Note
+
+### Environment
+
+Python 3.5.4
+Anaconda 4.1.0 (x86_64)
