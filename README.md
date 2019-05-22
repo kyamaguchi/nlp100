@@ -25,6 +25,7 @@ Wikipediaの記事を以下のフォーマットで書き出したファイルja
 https://qiita.com/search?sort=rel&q=tag%3Apython+100%E6%9C%AC%E3%83%8E%E3%83%83%E3%82%AF
 https://qiita.com/segavvy/items/fb50ba8097d59475f760
 https://qiita.com/ikura1/items/e98c769b43f56d0f2f85
+https://qiita.com/masassy/items/b969bc065888ee6f469f
 
 ## Development
 
