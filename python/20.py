@@ -3,16 +3,24 @@
 print("20. JSONデータの読み込み")
 print("Wikipedia記事のJSONファイルを読み込み，「イギリス」に関する記事本文を表示せよ．問題21-29では，ここで抽出した記事本文に対して実行せよ．")
 
+import os
 import gzip
 import json
 fname = 'jawiki-country.json.gz'
 
-with gzip.open(fname, "rt") as f:
-    for line in f:
-        data_json = json.loads(line)
-        # print(data_json['title'])
-        if data_json['title'] == 'イギリス':
-            print(data_json['text'])
+text_file_name = 'United_Kingdom.txt'
+
+if not os.path.exists(text_file_name):
+    with open(text_file_name, mode='w') as outfile:
+        with gzip.open(fname, "rt") as f:
+            for line in f:
+                data_json = json.loads(line)
+                # print(data_json['title'])
+                if data_json['title'] == 'イギリス':
+                    # print(data_json['text'])
+                    outfile.write(data_json['text'])
+
+print(open(text_file_name).read())
 
 # import os
 # import urllib.parse
