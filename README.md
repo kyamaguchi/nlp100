@@ -20,6 +20,16 @@ Wikipediaの記事を以下のフォーマットで書き出したファイルja
 各行には記事名が"title"キーに，記事本文が"text"キーの辞書オブジェクトに格納され，そのオブジェクトがJSON形式で書き出される
 ファイル全体はgzipで圧縮される
 
+##### 第4章: 形態素解析 (30〜)
+
+夏目漱石の小説『吾輩は猫である』の文章（neko.txt）をMeCabを使って形態素解析し，その結果をneko.txt.mecabというファイルに保存せよ．このファイルを用いて，以下の問に対応するプログラムを実装せよ．
+
+なお，問題37, 38, 39はmatplotlibもしくはGnuplotを用いるとよい．
+
+```
+mecab neko.txt -o neko.txt.mecab
+```
+
 ### Sample answers
 
 https://qiita.com/search?sort=rel&q=tag%3Apython+100%E6%9C%AC%E3%83%8E%E3%83%83%E3%82%AF
