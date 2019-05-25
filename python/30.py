@@ -18,7 +18,7 @@ for line in open('neko.txt.mecab').readlines():
     elm['surface'] = parts[0]
     parts2 = parts[1].split(',')
     elm['pos'] = parts2[0]
-    elm['pos1'] = parts2[2]
+    elm['pos1'] = parts2[1]
     if len(parts2) == 9:
         elm['base'] = parts2[6]
     group.append(elm)
