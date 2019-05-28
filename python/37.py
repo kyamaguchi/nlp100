@@ -5,15 +5,7 @@ print("出現頻度が高い10語とその出現頻度をグラフ（例えば�
 
 import common
 groups = common.extract_groups_from_mecab('neko.txt.mecab')
-
-counts = {}
-for group in groups:
-    for e in group:
-        x = e['surface']
-        if x in counts.keys():
-            counts[x] += 1
-        else:
-            counts[x] = 1
+counts = common.word_counts(groups)
 
 top10 = sorted(counts.items(), key=lambda x: [x[1], x[0]], reverse=True)[0:10]
 

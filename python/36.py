@@ -5,15 +5,7 @@ print("文章中に出現する単語とその出現頻度を求め，出現頻�
 
 import common
 groups = common.extract_groups_from_mecab('neko.txt.mecab')
-
-counts = {}
-for group in groups:
-    for e in group:
-        x = e['surface']
-        if x in counts.keys():
-            counts[x] += 1
-        else:
-            counts[x] = 1
+counts = common.word_counts(groups)
 
 for k, v in sorted(counts.items(), key=lambda x: [x[1], x[0]], reverse=True):
     print(v, k)

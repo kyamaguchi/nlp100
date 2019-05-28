@@ -19,3 +19,14 @@ def extract_groups_from_mecab(file):
             elm['base'] = parts2[6]
         group.append(elm)
     return groups
+
+def word_counts(groups):
+    counts = {}
+    for group in groups:
+        for e in group:
+            x = e['surface']
+            if x in counts.keys():
+                counts[x] += 1
+            else:
+                counts[x] = 1
+    return counts
