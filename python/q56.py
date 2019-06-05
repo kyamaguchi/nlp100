@@ -1,4 +1,12 @@
 #!/usr/bin/env python
 
-print("56. 共参照解析")
-print("Stanford Core NLPの共参照解析の結果に基づき，文中の参照表現（mention）を代表参照表現（representative mention）に置換せよ．ただし，置換するときは，「代表参照表現（参照表現）」のように，元の参照表現が分かるように配慮せよ．")
+def question():
+    print("56. 共参照解析")
+    print("Stanford Core NLPの共参照解析の結果に基づき，文中の参照表現（mention）を代表参照表現（representative mention）に置換せよ．ただし，置換するときは，「代表参照表現（参照表現）」のように，元の参照表現が分かるように配慮せよ．")
+
+def main():
+    pass
+
+if __name__ == '__main__':
+    question()
+    main()
