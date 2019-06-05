@@ -24,7 +24,15 @@ for section in sections:
             with open(filepath, 'w') as f:
                 f.write("#!/usr/bin/env python\n")
                 f.write("\n")
-                f.write("print(\"" + question.replace('"', '\\"') + "\")\n")
+                f.write("def question():\n")
+                f.write("    print(\"" + question.replace('"', '\\"') + "\")\n")
                 for tag in section.next_sibling.next_sibling.children:
                     if tag.name:
-                        f.write("print(\"" + tag.text.strip().replace('"', '\\"').replace("\n", ', ') + "\")\n")
+                        f.write("    print(\"" + tag.text.strip().replace('"', '\\"').replace("\n", ', ') + "\")\n")
+                f.write("\n")
+                f.write("def main():\n")
+                f.write("    pass\n")
+                f.write("\n")
+                f.write("if __name__ == '__main__':\n")
+                f.write("    question()\n")
+                f.write("    main()\n")
