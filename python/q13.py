@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("13. col1.txtとcol2.txtをマージ")
-print("12で作ったcol1.txtとcol2.txtを結合し，元のファイルの1列目と2列目をタブ区切りで並べたテキストファイルを作成せよ．確認にはpasteコマンドを用いよ．")
+def question():
+    print("13. col1.txtとcol2.txtをマージ")
+    print("12で作ったcol1.txtとcol2.txtを結合し，元のファイルの1列目と2列目をタブ区切りで並べたテキストファイルを作成せよ．確認にはpasteコマンドを用いよ．")
 
 fname = 'hightemp.txt'
 with open('cols.txt', mode='w') as cols_file, \
@@ -10,8 +11,13 @@ with open('cols.txt', mode='w') as cols_file, \
     for line in zip(col1_file.readlines(), col2_file.readlines()):
         cols_file.write('\t'.join([x.rstrip() for x in line]) + '\n')
 
-print(open('cols.txt').read())
-
 import subprocess
 res = subprocess.check_output("paste col1.txt col2.txt", shell=True, universal_newlines=True)
-print(res)
+
+def main():
+    print(open('cols.txt').read())
+    print(res)
+
+if __name__ == '__main__':
+    question()
+    main()

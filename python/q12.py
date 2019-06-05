@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("12. 1列目をcol1.txtに，2列目をcol2.txtに保存")
-print("各行の1列目だけを抜き出したものをcol1.txtに，2列目だけを抜き出したものをcol2.txtとしてファイルに保存せよ．確認にはcutコマンドを用いよ．")
+def question():
+    print("12. 1列目をcol1.txtに，2列目をcol2.txtに保存")
+    print("各行の1列目だけを抜き出したものをcol1.txtに，2列目だけを抜き出したものをcol2.txtとしてファイルに保存せよ．確認にはcutコマンドを用いよ．")
 
 col1 = open('col1.txt', 'w')
 col2 = open('col2.txt', 'w')
@@ -14,11 +15,16 @@ for line in open('hightemp.txt').readlines():
 col1.close()
 col2.close()
 
-print(open('col1.txt').read())
-print(open('col2.txt').read())
-
 import subprocess
 res1 = subprocess.check_output("cut -f 1 hightemp.txt", shell=True, universal_newlines=True)
-print(res1)
 res2 = subprocess.check_output("cut -f 2 hightemp.txt", shell=True, universal_newlines=True)
-print(res2)
+
+def main():
+    print(open('col1.txt').read())
+    print(open('col2.txt').read())
+    print(res1)
+    print(res2)
+
+if __name__ == '__main__':
+    question()
+    main()

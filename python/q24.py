@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("24. ファイル参照の抽出")
-print("記事から参照されているメディアファイルをすべて抜き出せ．")
+def question():
+    print("24. ファイル参照の抽出")
+    print("記事から参照されているメディアファイルをすべて抜き出せ．")
 
 import re
 
@@ -18,4 +19,10 @@ with open(filename, 'r') as f:
         m2 = re.search('^ファイル:([^|]+)\|', l)
         if m2:
             media.append(m2.group(1))
+
+def main():
     print('\n'.join(media))
+
+if __name__ == '__main__':
+    question()
+    main()

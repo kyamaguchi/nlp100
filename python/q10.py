@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 
-print("10. 行数のカウント")
-print("行数をカウントせよ．確認にはwcコマンドを用いよ．")
-
-print(len(open('hightemp.txt').readlines()))
+def question():
+    print("10. 行数のカウント")
+    print("行数をカウントせよ．確認にはwcコマンドを用いよ．")
 
 import subprocess
 res = subprocess.check_output('cat hightemp.txt | wc -l', shell=True, universal_newlines=True)
-print(res.strip())
+
+def main():
+    print(len(open('hightemp.txt').readlines()))
+    print(res.strip())
+
+if __name__ == '__main__':
+    question()
+    main()

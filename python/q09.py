@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("09. Typoglycemia")
-print("スペースで区切られた単語列に対して，各単語の先頭と末尾の文字は残し，それ以外の文字の順序をランダムに並び替えるプログラムを作成せよ．ただし，長さが４以下の単語は並び替えないこととする．適当な英語の文（例えば\"I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind .\"）を与え，その実行結果を確認せよ．")
+def question():
+    print("09. Typoglycemia")
+    print("スペースで区切られた単語列に対して，各単語の先頭と末尾の文字は残し，それ以外の文字の順序をランダムに並び替えるプログラムを作成せよ．ただし，長さが４以下の単語は並び替えないこととする．適当な英語の文（例えば\"I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind .\"）を与え，その実行結果を確認せよ．")
 
 import random
 
@@ -17,7 +18,6 @@ def convert(message):
     return ' '.join(new_words)
 
 message = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
-print(convert(message))
 
 def convert2(message):
     new_words = []
@@ -31,5 +31,12 @@ def convert2(message):
             new_words.append(word[0] + ''.join(chr_list) + word[-1])
     return ' '.join(new_words)
 
-message = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
-print(convert2(message))
+message2 = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
+
+def main():
+    print(convert(message))
+    print(convert2(message2))
+
+if __name__ == '__main__':
+    question()
+    main()

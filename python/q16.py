@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("16. ファイルをN分割する")
-print("自然数Nをコマンドライン引数などの手段で受け取り，入力のファイルを行単位でN分割せよ．同様の処理をsplitコマンドで実現せよ．")
+def question():
+    print("16. ファイルをN分割する")
+    print("自然数Nをコマンドライン引数などの手段で受け取り，入力のファイルを行単位でN分割せよ．同様の処理をsplitコマンドで実現せよ．")
 
 import subprocess
 
@@ -18,8 +19,14 @@ for i, group in enumerate(groups):
             out_file.write(line)
 
 res1 = subprocess.check_output('head py_hightemp*', shell=True, universal_newlines=True)
-print(res1)
 
 subprocess.check_output('split -a 3 -l %s hightemp.txt sp_hightemp_' %(n), shell=True, universal_newlines=True)
 res2 = subprocess.check_output('head sp_hightemp_*', shell=True, universal_newlines=True)
-print(res2)
+
+def main():
+    print(res1)
+    print(res2)
+
+if __name__ == '__main__':
+    question()
+    main()

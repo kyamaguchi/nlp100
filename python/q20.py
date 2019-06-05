@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("20. JSONデータの読み込み")
-print("Wikipedia記事のJSONファイルを読み込み，「イギリス」に関する記事本文を表示せよ．問題21-29では，ここで抽出した記事本文に対して実行せよ．")
+def question():
+    print("20. JSONデータの読み込み")
+    print("Wikipedia記事のJSONファイルを読み込み，「イギリス」に関する記事本文を表示せよ．問題21-29では，ここで抽出した記事本文に対して実行せよ．")
 
 import os
 import gzip
@@ -20,7 +21,12 @@ if not os.path.exists(text_file_name):
                     # print(data_json['text'])
                     outfile.write(data_json['text'])
 
-print(open(text_file_name).read())
+def main():
+    print(open(text_file_name).read())
+
+if __name__ == '__main__':
+    question()
+    main()
 
 # import os
 # import urllib.parse

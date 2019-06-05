@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("34. 「AのB」")
-print("2つの名詞が「の」で連結されている名詞句を抽出せよ．")
+def question():
+    print("34. 「AのB」")
+    print("2つの名詞が「の」で連結されている名詞句を抽出せよ．")
 
 import common
 groups = common.extract_groups_from_mecab('neko.txt.mecab')
@@ -13,8 +14,13 @@ for group in groups:
         if elements[1]['surface'] == 'の' and elements[0]['pos'] == '名詞' and elements[2]['pos'] == '名詞':
             items.add(''.join([x['surface'] for x in elements]))
 
-print(sorted(list(items)))
-print(len(items))
+def main():
+    print(sorted(list(items)))
+    print(len(items))
+
+if __name__ == '__main__':
+    question()
+    main()
 
 # print('-----')
 # items = set()

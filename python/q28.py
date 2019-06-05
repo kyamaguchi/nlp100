@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("28. MediaWikiマークアップの除去")
-print("27の処理に加えて，テンプレートの値からMediaWikiマークアップを可能な限り除去し，国の基本情報を整形せよ．")
+def question():
+    print("28. MediaWikiマークアップの除去")
+    print("27の処理に加えて，テンプレートの値からMediaWikiマークアップを可能な限り除去し，国の基本情報を整形せよ．")
 
 import re
 import collections
@@ -35,5 +36,10 @@ for l in infolines:
     if m:
         info[m.group(1)] = m.group(2)
 
-for k,v in info.items():
-    print('{k} = {v}'.format(k=k, v=v))
+def main():
+    for k,v in info.items():
+        print('{k} = {v}'.format(k=k, v=v))
+
+if __name__ == '__main__':
+    question()
+    main()

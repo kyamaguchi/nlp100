@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("33. サ変名詞")
-print("サ変接続の名詞をすべて抽出せよ．")
+def question():
+    print("33. サ変名詞")
+    print("サ変接続の名詞をすべて抽出せよ．")
 
 import common
 groups = common.extract_groups_from_mecab('neko.txt.mecab')
@@ -12,5 +13,10 @@ for group in groups:
         if e['pos1'] == 'サ変接続':
             items.add(e['surface'])
 
-print(sorted(list(items)))
-print(len(items))
+def main():
+    print(sorted(list(items)))
+    print(len(items))
+
+if __name__ == '__main__':
+    question()
+    main()

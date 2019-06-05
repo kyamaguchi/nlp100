@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("27. 内部リンクの除去")
-print("26の処理に加えて，テンプレートの値からMediaWikiの内部リンクマークアップを除去し，テキストに変換せよ（参考: マークアップ早見表）．")
+def question():
+    print("27. 内部リンクの除去")
+    print("26の処理に加えて，テンプレートの値からMediaWikiの内部リンクマークアップを除去し，テキストに変換せよ（参考: マークアップ早見表）．")
 
 import re
 import collections
@@ -29,5 +30,10 @@ for l in infolines:
     if m:
         info[m.group(1)] = m.group(2)
 
-for k,v in info.items():
-    print('{k} = {v}'.format(k=k, v=v))
+def main():
+    for k,v in info.items():
+        print('{k} = {v}'.format(k=k, v=v))
+
+if __name__ == '__main__':
+    question()
+    main()

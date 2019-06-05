@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("26. 強調マークアップの除去")
-print("25の処理時に，テンプレートの値からMediaWikiの強調マークアップ（弱い強調，強調，強い強調のすべて）を除去してテキストに変換せよ（参考: マークアップ早見表）．")
+def question():
+    print("26. 強調マークアップの除去")
+    print("25の処理時に，テンプレートの値からMediaWikiの強調マークアップ（弱い強調，強調，強い強調のすべて）を除去してテキストに変換せよ（参考: マークアップ早見表）．")
 
 import re
 import collections
@@ -31,5 +32,10 @@ for l in infolines:
     if m:
         info[m.group(1)] = m.group(2)
 
-for k,v in info.items():
-    print('{k} = {v}'.format(k=k, v=v))
+def main():
+    for k,v in info.items():
+        print('{k} = {v}'.format(k=k, v=v))
+
+if __name__ == '__main__':
+    question()
+    main()

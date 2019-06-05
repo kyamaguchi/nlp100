@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 
-print("36. 単語の出現頻度")
-print("文章中に出現する単語とその出現頻度を求め，出現頻度の高い順に並べよ．")
+def question():
+    print("36. 単語の出現頻度")
+    print("文章中に出現する単語とその出現頻度を求め，出現頻度の高い順に並べよ．")
 
 import common
 groups = common.extract_groups_from_mecab('neko.txt.mecab')
 counts = common.word_counts(groups)
-
-for k, v in sorted(counts.items(), key=lambda x: [x[1], x[0]], reverse=True):
-    print(v, k)
-
 
 from collections import Counter
 word_counter = Counter()
@@ -18,4 +15,14 @@ for group in groups:
 
 # 出現頻度順のリストを取得
 list_word = word_counter.most_common()
-print(list_word)
+
+def main():
+    for k, v in sorted(counts.items(), key=lambda x: [x[1], x[0]], reverse=True):
+        print(v, k)
+
+    print(list_word)
+
+if __name__ == '__main__':
+    question()
+    main()
+

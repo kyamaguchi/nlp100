@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-print("25. テンプレートの抽出")
-print("記事中に含まれる「基礎情報」テンプレートのフィールド名と値を抽出し，辞書オブジェクトとして格納せよ．")
+def question():
+    print("25. テンプレートの抽出")
+    print("記事中に含まれる「基礎情報」テンプレートのフィールド名と値を抽出し，辞書オブジェクトとして格納せよ．")
 
 import re
 import collections
@@ -31,5 +32,10 @@ for l in infolines:
     if m:
         info[m.group(1)] = m.group(2)
 
-for k,v in info.items():
-    print('{k} = {v}'.format(k=k, v=v))
+def main():
+    for k,v in info.items():
+        print('{k} = {v}'.format(k=k, v=v))
+
+if __name__ == '__main__':
+    question()
+    main()
