@@ -15,7 +15,7 @@ for section in sections:
     if section.a is not None:
         question = section.contents[1]
         number = question.split(".")[0]
-        filepath = os.path.join(base_dir, number + '.py')
+        filepath = os.path.join(base_dir, 'q' + number + '.py')
 
         if os.path.exists(filepath):
             print(filepath + " already exists.")
